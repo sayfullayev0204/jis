@@ -321,7 +321,7 @@
 </body>
 </html>
 <style>
-    /* Reset and Base Styles */
+  /* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -855,8 +855,38 @@ body {
     display: flex;
   }
 
+  /* Added mobile menu styles for proper functionality */
   .nav-menu {
-    display: none;
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #c41e3a;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 15px 0;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .hero-container {
@@ -938,6 +968,7 @@ body {
 .notification.error {
   background: #e74c3c;
 }
+
 </style>
 <script>
     // DOM Elements
